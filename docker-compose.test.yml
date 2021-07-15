@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  hw_db_test:
+    image: postgres:12-alpine
+    container_name: hw_db_test
+    environment:
+      POSTGRES_DB: hw_db_test
+      POSTGRES_USER: hw_user
+      POSTGRES_PASSWORD: hw_password
+    volumes:
+      - './.docker_pgdata_test:/var/lib/postgresql/data'
+    ports:
+      - '5440:5432'
+    
+
+  hm_test:
+    build:
+      context: .
+    command: npm run test
+    container_name: hm_test
+    depends_on:
+      - hw_db_test
+    ports:
+      - '3050:3050'
+    environment:
+      PORT: 3050
+      DATABASE_PORT: 5432
+      DATABASE_HOST: hw_db_test
+      DATABASE_NAME: hw_db_test
+      DATABASE_USER: hw_user
+      DATABASE_ACCESS_KEY: hw_password
+      JWT_SECRET: secret_secret
+    volumes:
+      - ./:/app

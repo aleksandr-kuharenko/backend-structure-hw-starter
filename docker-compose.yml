@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  hw_db:
+    image: postgres:12-alpine
+    container_name: hw_db
+    environment:
+      POSTGRES_DB: hw_db
+      POSTGRES_USER: hw_user
+      POSTGRES_PASSWORD: hw_password
+    volumes:
+      - './.docker_pgdata:/var/lib/postgresql/data'
+    ports:
+      - '5422:5432'
+

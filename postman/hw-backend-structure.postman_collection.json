@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "37a917ac-5cfe-43ca-a619-4e8d13eef583",
+		"name": "hw-backend-structure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get /health",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRjM2EwM2ZjLTk5N2YtNGJhZS05ZjQ2LTYyMzUwOTFlNDM5YSIsInR5cGUiOiJhZG1pbiIsImlhdCI6MTYyMzU5NTQ1NX0.Nz7UrgMwhbviVO72YurU1vGWUbw_1bEBe0sC2y680Y8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post /users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"{{$randomUUID}}\",\n    \"type\": \"client\",\n    \"email\": \"exampl2222e@gmail.com\",\n    \"phone\": \"+380511679919\",\n    \"name\": \"Alex\",\n    \"city\": \"Kherson\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get /users/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"{{$randomUUID}}\",\n    \"type\": \"client\",\n    \"email\": \"exampl0122e@gmail.com\",\n    \"phone\": \"+380501679911\",\n    \"name\": \"Alex\",\n    \"city\": \"Kherson\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/3fe4782a-00bc-4df5-85a3-c03c826b02f3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"3fe4782a-00bc-4df5-85a3-c03c826b02f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put /users/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkODA3YTBkLWU4MjQtNDIzOC1iYzU5LTdlOGFiNmE5NTk1YyIsInR5cGUiOiJjbGllbnQiLCJpYXQiOjE2MjM2NjgyMjB9.pDmW_3gQLi9QEU3FAjN6aV_XlxTc2T8taIBatm_prVU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"city\": \"Kherson2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/ed807a0d-e824-4238-bc59-7e8ab6a9595c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"ed807a0d-e824-4238-bc59-7e8ab6a9595c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post /transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmOWEwMmM2LTRjNDUtNDU3My1hZjgzLTA4OTUwYzYyMWNkMSIsInR5cGUiOiJhZG1pbiIsImlhdCI6MTYyMzY2ODE4M30.vWqqjjxxJyR-kAdqNxaxciuJ39Ptk88-iwY9mOEf36U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"{{$randomUUID}}\",\n    \"userId\": \"1942ec52-f127-4d7e-93e5-2091f6cb5661\",\n    \"cardNumber\": \"111111111111\",\n    \"amount\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post /events",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmOWEwMmM2LTRjNDUtNDU3My1hZjgzLTA4OTUwYzYyMWNkMSIsInR5cGUiOiJhZG1pbiIsImlhdCI6MTYyMzY2ODE4M30.vWqqjjxxJyR-kAdqNxaxciuJ39Ptk88-iwY9mOEf36U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"football\",\n    \"homeTeam\": \"Ukraine\",\n    \"awayTeam\": \"Netherlands\",\n    \"startAt\": \"2021-06-13T22:22:09.900Z\",\n    \"odds\": {\n        \"homeWin\": 1.2,\n        \"awayWin\": 3.0,\n        \"draw\": \"2.8\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post /bets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE5NDJlYzUyLWYxMjctNGQ3ZS05M2U1LTIwOTFmNmNiNTY2MSIsInR5cGUiOiJjbGllbnQiLCJpYXQiOjE2MjM2NjgyNTN9.wTpnsTqeMpFX2IKKSLkdJjqJbKM0MpHdGaGLbvhil4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"eventId\": \"6e3a5e6c-ecbd-44cc-a527-6d85a27d5638\",\n    \"betAmount\": 50,\n    \"prediction\": \"w1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put /events/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmOWEwMmM2LTRjNDUtNDU3My1hZjgzLTA4OTUwYzYyMWNkMSIsInR5cGUiOiJhZG1pbiIsImlhdCI6MTYyMzY2ODE4M30.vWqqjjxxJyR-kAdqNxaxciuJ39Ptk88-iwY9mOEf36U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"score\": \"1:2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events/74a1250d-7208-4195-9c10-116534df04c7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"74a1250d-7208-4195-9c10-116534df04c7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get /stats",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRjM2EwM2ZjLTk5N2YtNGJhZS05ZjQ2LTYyMzUwOTFlNDM5YSIsInR5cGUiOiJhZG1pbiIsImlhdCI6MTYyMzU5NTQ1NX0.Nz7UrgMwhbviVO72YurU1vGWUbw_1bEBe0sC2y680Y8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"score\": \"1:2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/stats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,4 @@
+/node_modules
+.env
+.docker_pgdata
+.docker_pgdata_test
