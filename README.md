@@ -8,7 +8,7 @@
 ### First time:
 1. `npm install`
 2.  create `.env` file, copy values from `.example.env`
-3. `npm run docker:dev:db` (runs database)
+3. `npm run docker:dev:db` (runs database in docker container)
 4. `npm run migrate:latest && npm run seed` 
 5. `npm run dev` (runs server)  
 
