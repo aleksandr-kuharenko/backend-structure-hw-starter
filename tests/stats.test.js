@@ -19,8 +19,8 @@ describe("/stats route", () => {
         .set("authorization", `Bearer ${token}`);
       expect(status).to.be.equal(200);
       expect(body.totalUsers).to.be.equal(4);
-      expect(body.totalBets).to.be.equal(3);
-      expect(body.totalEvents).to.be.equal(4);
+      expect(body.totalBets).to.be.equal(2);
+      expect(body.totalEvents).to.be.equal(2);
     });
 
     it("should return status 401 for not admin's token", async () => {

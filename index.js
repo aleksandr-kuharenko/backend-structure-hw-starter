@@ -12,8 +12,8 @@ var port = 3000;
 var statEmitter = new ee();
 var stats = {
   totalUsers: 3,
-  totalBets: 2,
-  totalEvents: 3,
+  totalBets: 1,
+  totalEvents: 1,
 };
 
 var db;
