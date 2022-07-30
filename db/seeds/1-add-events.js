@@ -11,7 +11,7 @@ exports.seed = (knex) => {
       ]);
     })
     .then(() => {
-      knex("event")
+      return knex("event")
         .then(() => {
           return knex("event").insert([
             {
